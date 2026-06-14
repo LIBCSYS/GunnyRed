@@ -1,0 +1,27 @@
+# Build output
+bin/
+obj/
+out/
+*.user
+
+# .NET
+project.lock.json
+*.nupkg
+.vs/
+
+# Secrets — NEVER commit these
+.env
+.env.*
+*.key
+*.pem
+anthropic.env
+*.secrets
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
