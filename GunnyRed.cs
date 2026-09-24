@@ -1,5 +1,11 @@
 #:package Anthropic@12.24.1
 #:property JsonSerializerIsReflectionEnabledByDefault=true
+// File-based `dotnet publish` defaults to Native AOT, which strips the reflection
+// metadata the Anthropic SDK's JSON serializer needs (ImmutableArray<MessageParam>).
+// Turn AOT off; publish a self-contained single-file JIT binary instead.
+#:property PublishAot=false
+#:property SelfContained=true
+#:property PublishSingleFile=true
 
 using System;
 using Anthropic;
